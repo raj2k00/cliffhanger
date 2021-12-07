@@ -1,0 +1,105 @@
+<%- include('partials/header') %>
+
+<section aria-label="Newest Photos">
+  <div class="carousel" data-carousel>
+    <button class="carousel-button prev" data-carousel-button="prev">
+      &#8656;
+    </button>
+    <button class="carousel-button next" data-carousel-button="next">
+      &#8658;
+    </button>
+    <ul data-slides>
+      <li class="slide" data-active>
+        <img src="Assets/nature.jpg" alt="Nature Image #1" />
+        <h1>
+          <a class="carousel-links" href="">
+            AwesomLorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+            veritatis quibusdam aut incidunt</a
+          >
+        </h1>
+      </li>
+      <li class="slide">
+        <img src="Assets/horror.png" alt="Nature Image #2" />
+        <h1>
+          <a class="carousel-links" href="">
+            AwesomLorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+            veritatis quibusdam aut incidunt</a
+          >
+        </h1>
+      </li>
+      <li class="slide">
+        <img src="Assets/rengoku.jpg" alt="Nature Image #3" />
+        <h1>
+          <a class="carousel-links" href="">
+            AwesomLorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+            veritatis quibusdam aut incidunt</a
+          >
+        </h1>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="Blog-Main-content">
+  <div class="main-content">
+    <div class="hr-style">
+      <h1>Latest</h1>
+      <hr class="hr-headline" />
+    </div>
+
+    <% Posts.forEach( Post =>{ %>
+    <div class="blog-item">
+      <div class="blog-container">
+        <div class="blog-image">
+          <img
+            src="data:image/<%=Post.img.contentType%>;base64,<%=Post.img.data.toString('base64')%>"
+            alt="image"
+          />
+        </div>
+        <div class="blog-content">
+          <h1 class="blog-heading"><%= Post.title %></h1>
+          <p class="blog-subheading"><%= Post.subtitle %></p>
+          <p class="blog-created-at">
+            posted by <%= Post.fname %><%= Post.lname %> at
+            <span class="time-stamp">
+              <%= Post.createdAt.toLocaleDateString() %></span
+            >
+          </p>
+        </div>
+      </div>
+      <hr class="blog-seperator" />
+    </div>
+    <% })%>
+  </div>
+
+  <div class="side-content">
+    <div class="hr-side-style">
+      <h1>Trending</h1>
+      <hr class="hr-headline" />
+    </div>
+
+    <div class="side-container">
+      <div class="side-image">
+        <img src="Assets/spacex.jpg" alt="image" />
+      </div>
+      <div class="side-content-text">
+        <h1 class="side-heading">
+          Every Pirates of Carabeain movies ranked according to imdb
+        </h1>
+      </div>
+    </div>
+
+    <div class="side-container">
+      <div class="side-image">
+        <img src="Assets/spacex.jpg" alt="image" />
+      </div>
+      <div class="side-content-text">
+        <h1 class="side-heading">
+          Every Pirates of Carabeain movies ranked according to imdb
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
