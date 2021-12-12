@@ -12,7 +12,12 @@
 </section>
 
 <section class="form-control">
-  <form class="form-container" action="/compose" method="post" enctype="multipart/form-data">
+  <form
+    class="form-container"
+    action="/compose"
+    method="post"
+    enctype="multipart/form-data"
+  >
     <h1 class="form-heading">Publish article by Submitting the form below</h1>
     <div class="form-UserName">
       <div class="form-group">
@@ -23,6 +28,7 @@
           placeholder="Your First Name"
           name="fname"
           id="fname"
+          required
         />
       </div>
       <div class="form-group pad-left">
@@ -37,28 +43,32 @@
       </div>
     </div>
     <div class="form-group form-headline">
-      <label for="heading" class="form-label">Headline</label>
+      <label for="heading" class="form-label">Title</label>
       <input
         type="text"
         class="form-input"
-        placeholder="Give a Cachy Headline"
+        placeholder="Give a Cachy Title"
         name="heading"
         id="heading"
+        maxlength="80"
+        required
       />
     </div>
     <div class="form-group form-headline">
-      <label for="subheading" class="form-label">Headline</label>
+      <label for="subheading" class="form-label">Description</label>
       <input
         type="text"
         class="form-input"
-        placeholder="Give a some subheading"
+        placeholder="Describe a little about your content (max-100 character)"
         name="subheading"
         id="subheading"
+        maxlength="100"
+        required
       />
     </div>
     <div class="upload__box form-group">
       <div class="upload__btn-box">
-        <label class="upload__btn" for ="image">
+        <label class="upload__btn" for="image">
           <p>Upload header image</p>
           <input
             type="file"
@@ -67,13 +77,21 @@
             name="image"
             id="image"
             value=""
-            required
+            
           />
         </label>
       </div>
       <div class="upload__img-wrap"></div>
     </div>
 
+    <div class="form-group form-select-tag">
+      <label for="cars">Choose a Type:</label>
+      <select class="select-item" name="posttype" id="select-tag">
+        <option value="main">Main article</option>
+        <option value="trend">trending article</option>
+        <option value="feature">Featured article</option>
+      </select>
+    </div>
 
     <div class="form-group form-marked">
       <h1>Write your Article</h1>
@@ -83,8 +101,11 @@
         id="markdown"
         cols="30"
         rows="10"
-        placeholder="Use '#' before the start of heading ,   Use '[]'' to mention images/urls  "
-      ></textarea>
+        required
+      >
+  One more thing please copy the text you type below and paste it to the marked demo
+ Delete the following before submitting -( use # followed by space then title to get h1 * more the hashes you get h1 to h6. for links use ['text to be displayed'](link) including pics use {'!'} before the []. for indent use > , for list item use -  )</textarea
+      >
     </div>
     <div class="form-submit-container">
       <button class="form-submit" type="submit">Publish</button>

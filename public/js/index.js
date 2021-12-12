@@ -13,7 +13,10 @@ function myFunction(){
         toggleIcon.classList.add('fa-bars')
         toggleIcon.classList.remove('fa-times')
     }   
-}
+}   
+    if(document.querySelector(".carousel-ul-list") != null){
+        document.querySelector(".carousel-ul-list").firstElementChild.setAttribute("data-active",'');
+    };
     const buttons = document.querySelectorAll("[data-carousel-button]")
 
     buttons.forEach(button => {
@@ -56,9 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 mainNav.classList.add('is-fixed');
             }
             navmain.classList.remove('nav-onclick');
-            toggleIcon.classList.add('fa-bars')
-              
-            
+            toggleIcon.classList.add('fa-bars');
         }
         scrollPos = currentTop;
     })

@@ -3,32 +3,21 @@
     <section class="post">
       <div class="post-container">
         
-        <h1 class="post-title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto magni
-          cumque dolores quos minima, omnis reiciend
+        <h1>
+          <%= Post.title %> 
         </h1>
-        <p class="post-paragraph"></p>
-
-
-        <img class="post-image" src="./Assets/nature.jpg" alt="" srcset="" />
-
-
-        <p class="post-paragraph">
-          Every pirates of the crabian movie ranked asjfskjfkljslk sjfksjlf
-          kskdfj dfklajf ksfjklasjfk asdfs asdfka Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Blanditiis debitis molestiae mollitia
-          maxime facere qui Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Commodi soluta exercitationem cupiditate possimus quaerat? Dolor
-          voluptas, ex quibusdam similique est quo ab voluptatum dicta
-          asperiores, ea mollitia sequi eveniet quisq Lorem, ipsum dolor sit
-          amet consectetur adipisicing elit. At laboriosam qui odio maxime error
-          facere voluptates unde inventore ullam culpa laudantium repellat
-          excepturi autem, minus quia voluptatum quam enim tempora. uam. busdam
-          tenetur a consequuntur voluptates ut! Perspiciatis delectus earum,
-          possimus iure omnis laboriosam voluptatem nesciunt aliquam.
+        <h2 class="post-subtitle"> <%= Post.subtitle %> </h2>
+        <p class="blog-created-at">
+          posted by <%= Post.fname %><%= Post.lname %> at
+          <span class="time-stamp">
+            <%= Post.createdAt.toLocaleDateString() %></span
+          >
         </p>
-        <h2 class="post-subtitle">About High rise invasion</h2>
-        <img class="post-image" src="https://imgur.com/5PJak1w.jpg" alt="image" srcset="" />
+        <img  
+              src="data:image/<%=Post.img.contentType%>;base64,<%=Post.img.data.toString('base64')%>"
+              alt="Post-image"/>
+
+        <%- Post.sanitizedHtml %> 
 
       </div>
     </section>
