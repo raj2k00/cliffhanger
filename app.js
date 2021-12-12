@@ -37,8 +37,8 @@ const upload = multer({ storage: storage });
 const transporter = nodemailer.createTransport({
   service: "hotmail",
   auth: {
-      user: "conquerorraj2626@outlook.com",
-      pass: "Mohanraj@2626"
+      user: user,
+      pass: Password
   }
 });
 
