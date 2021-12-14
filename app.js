@@ -23,11 +23,10 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 
-<<<<<<< HEAD
 mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-=======
+
 mongoose.connect("mongodb://localhost:27017/newblogDB", {useNewUrlParser: true, useUnifiedTopology:true});
 
 const storage = multer.diskStorage({
@@ -47,7 +46,6 @@ const transporter = nodemailer.createTransport({
       user: user,
       pass: Password
   }
->>>>>>> f3ca7c5128c025dd654d6e7cf27e35ef3608119e
 });
 
 app.get("/", async (req, res) => {
@@ -82,8 +80,4 @@ app.get("/:reqid", (req, res) => {
 });
 
 
-<<<<<<< HEAD
-app.listen(3000, () => console.log("server started on port 3000"));
-=======
-app.listen(3000,()=>console.log("server started on port 3000"))
->>>>>>> f3ca7c5128c025dd654d6e7cf27e35ef3608119e
+app.listen(process.env.PORT || 3000,()=>console.log("server started on port 3000"))
