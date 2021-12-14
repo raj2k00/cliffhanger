@@ -11,96 +11,96 @@
   </div>
 </section>
 
-<section class="form-control">
-    <h1 class="form-heading">Send your article by Submitting the form below</h1>
-    
-    <form  class="form-container" action="/userArticle"
-    method="post" id="email_form">
-    
-    <div class="form-UserName">
-      <div class="form-group">
-        <label for="fname" class="form-label">First Name</label>
-        <input
-          type="text"
-          class="form-input"
-          placeholder="Your First Name"
-          name="fname"
-          id="fname"
-        />
-      </div>
-      <div class="form-group pad-left">
-        <label for="lname" class="form-label">Last Name</label>
-        <input
-          type="text"
-          class="form-input"
-          placeholder="Your Last Name"
-          name="lname"
-          id="lname"
-        />
-      </div>
-    </div>
-
-    <div class="form-group form-email">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-input"
-        placeholder="Your Email"
-        name="text"
-        id="email"
-      />
-    </div>
-    <div class="form-group form-topic">
-      <label for="topic" class="form-label">Topic</label>
+<form
+  class="form-container"
+  action="/userArticle"
+  method="POST"
+  id="email_form"
+  enctype="multipart/form-data"
+>
+  <div class="form-UserName">
+    <div class="form-group">
+      <label for="fname" class="form-label">First Name</label>
       <input
         type="text"
         class="form-input"
-        placeholder="Enter Topic/Catagory"
-        name="text"
-        id="topic"
+        placeholder="Your First Name"
+        name="fname"
+        id="fname"
       />
     </div>
-    <div class="form-group form-headline">
-      <label for="headline" class="form-label">Headline</label>
+    <div class="form-group pad-left">
+      <label for="lname" class="form-label">Last Name</label>
       <input
         type="text"
         class="form-input"
-        placeholder="Give a Cachy Headline"
-        name="text"
-        id="heading"
+        placeholder="Your Last Name"
+        name="lname"
+        id="lname"
       />
     </div>
-    <div class="upload__box form-group">
-      <div class="upload__btn-box">
-        <label class="upload__btn">
-          <p>Upload images</p>
-          <input
-            type="file"
-            multiple=""
-            name="text"
-            data-max_length="20"
-            class="upload__inputfile"
-          />
-        </label>
-      </div>
-      <div class="upload__img-wrap"></div>
-    </div>
-    <div class="form-group form-marked">
-      <h1>Write your Article</h1>
-      <textarea
-        class="form-marked-text"
-        name="text"
-        id="mark-down"
-        cols="30"
-        rows="10"
-        placeholder="Use '#' before the start of heading ,   Use '[]'' to mention images/urls  "
-      ></textarea>
-    </div>
-    <div class="form-submit-container">
-      <button class="form-submit" id="js_send" type="submit">Send!</button>
-    </div>
-  </form>
-</section>
+  </div>
+  <div class="form-group form-email">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-input"
+      placeholder="Your Email"
+      name="email"
+      id="email"
+    />
+  </div>
+  <div class="form-group form-topic">
+    <label for="topic" class="form-label">Topic</label>
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Topic/Catagory"
+      name="topic"
+      id="topic"
+    />
+  </div>
+  <div class="form-group form-headline">
+    <label for="headline" class="form-label">Headline</label>
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Give a Cachy Headline"
+      name="headline"
+      id="heading"
+    />
+  </div>
 
+  <div class="upload__box form-group">
+    <div class="upload__btn-box">
+      <label class="upload__btn">
+        <p>Upload images</p>
+        <input
+          type="file"
+          multiple
+          name="image"
+          data-max_length="10"
+          class="upload__inputfile"
+      /></label>
+    </div>
+    <div class="upload__img-wrap"></div>
+  </div>
+
+  <div class="form-group form-marked">
+    <h1>Write your Article</h1>
+    <textarea
+      class="form-marked-text"
+      name="markdown"
+      id="mark-down"
+      cols="30"
+      rows="10"
+      placeholder="Use '#' before the start of heading ,   Use '[]'' to mention images/urls  "
+    ></textarea>
+  </div>
+
+  <div class="form-submit-container">
+    <button class="form-submit" id="js_send" type="submit">Send!</button>
+  </div>
+</form>
 
 <%- include('partials/footer') %>

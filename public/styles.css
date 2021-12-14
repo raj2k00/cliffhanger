@@ -667,6 +667,11 @@ a:visited {
   text-align: left;
   margin-bottom: 2rem;
 }
+.post-container h3{
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 .post-container ul{
   text-align: left;
   font-size: 1.7rem;

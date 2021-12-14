@@ -9,6 +9,11 @@ const postSchema = new mongoose.Schema({
   lname: String,
   title: String,
   subtitle: String,
+  views:Number,
+  category:{
+    type:String,
+    required:true,
+  },
   img: {
     data: Buffer,
     contentType: String,
@@ -25,7 +30,6 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  views:Number
 });
 
 postSchema.pre("validate", function (next) {
